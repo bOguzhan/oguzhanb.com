@@ -63,9 +63,9 @@ const visiblePosts = typeof limit === "number" ? posts.slice(0, limit) : posts;
 <section class="content-shell">
     <div>
         <div
-            class="grid grid-cols-1 border-base-200"
+            class="grid grid-cols-1 gap-y-24 md:grid-cols-3 border-b py-24 border-base-200"
         >
-            <div class="mt-0 mb-8">
+            <div class="lg:sticky lg:top-24 lg:z-40 self-start">
                 <h2
                     class="text-sm 2xl:text-xl text-base-900 font-bold uppercase"
                 >
@@ -79,7 +79,6 @@ const visiblePosts = typeof limit === "number" ? posts.slice(0, limit) : posts;
                 {
                     visiblePosts.map((post) => {
                         const p = getPostData(post) || {};
-                        console.log(p);
                         const id = (post as any).id;
                         const href = id
                             ? withBase(`/blog/${id}/`)

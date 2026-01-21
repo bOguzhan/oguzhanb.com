@@ -1,6 +1,11 @@
 ---
 import Search from "astro-pagefind/components/Search";
 import { Icon } from 'astro-icon/components';
+
+export interface Props {
+  class?: string;
+}
+const { class: className = '' } = Astro.props as Props;
 ---
 
 <button
@@ -9,11 +14,11 @@ import { Icon } from 'astro-icon/components';
 	aria-haspopup="dialog"
 	aria-controls="search-modal"
 	aria-expanded="false"
-	class="search-trigger"
+	class={`search-trigger ${className}`}
 >
 	<span class="sr-only">Open search dialog</span>
 	<span class="search-trigger__icon" aria-hidden="true">
-		<Icon name="tabler:search" size={18} stroke-width={1} />
+		Search
 	</span>
 </button>
 
@@ -96,35 +101,6 @@ window.addEventListener('keydown', (event) => {
 </script>
 
 <style is:inline>
-.search-trigger {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	width: 36px;
-	height: 36px;
-	border: 1px solid var(--color-border, rgba(0, 0, 0, 0.12));
-	border-radius: 9999px;
-	background: color-mix(in oklab, var(--color-surface, #fff) 92%, transparent 8%);
-	color: var(--color-ink, currentColor);
-	transition: border-color 150ms ease, background-color 150ms ease, color 150ms ease, transform 150ms ease;
-	cursor: pointer;
-}
-
-.search-trigger:hover {
-	border-color: color-mix(in oklab, var(--color-ink, #111) 32%, transparent);
-	background: color-mix(in oklab, var(--color-surface, #fff) 85%, var(--color-ink, #111) 5%);
-	transform: translateY(-1px);
-}
-
-.search-trigger__label {
-	font-size: 0.72rem;
-}
-
-.search-trigger__icon {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-}
 
 .search-modal {
 	position: fixed;
@@ -338,8 +314,6 @@ window.addEventListener('keydown', (event) => {
 	}
 
 	.search-trigger {
-		width: 36px;
-		height: 36px;
 		justify-content: center;
 	}
 

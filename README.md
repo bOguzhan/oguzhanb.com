@@ -1,19 +1,19 @@
-# Astro Launchpad
+# Dasein
 
-An Astro starter tailored for agencies and studios: MDX blog, global search, RSS, sitemap, light/dark/blue themes, and components ready to sell services or publish content.
+An Astro starter for personal blogs and portfolios with TypeScript, Tailwind CSS, Pagefind search, and theming.
 
 ![](./public/SS-1.png)
 
-[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/static-site?referralCode=welcome)
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/roicort/launchpad)
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Froicort%2Flaunchpad)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/roicort/dasein)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Froicort%2Fdasein)
 
 ## Features
+
 - Blog with Markdown/MDX, featured post, and tag listings
 - Typed collections for posts, authors, and socials in [src/content.config.ts](src/content.config.ts)
 - Site-wide search via Pagefind with an accessible modal
 - SEO-ready: OpenGraph/Twitter, canonical links, and preloaded fonts in [src/components/BaseHead.astro](src/components/BaseHead.astro)
-- Themes `light/dark/blue` with persistent toggle; debug toggle for layout borders
+- Themes `light/dark` with persistent toggle; debug toggle for layout borders
 - RSS (`/rss.xml`) and sitemap (`/sitemap-index.xml`) generated automatically
 
 
@@ -26,7 +26,7 @@ An Astro starter tailored for agencies and studios: MDX blog, global search, RSS
 
 ## Requirements
 - Bun
-- Astro @latest
+- Astro@latest
 - Tailwdind CSS
 
 ## Install & run
@@ -46,6 +46,7 @@ bun run preview
 ```
 
 ## Content
+
 - Posts: add `.md` or `.mdx` under `src/content/blog`. Schema validates `title`, `description`, `pubDate`, `updatedDate?`, `heroImage?`, `tags[]`.
 - Authors: `src/content/authors.yml`.
 - Socials: `src/content/socials.yml`.
@@ -63,15 +64,18 @@ heroImage: ../../assets/blog/ship.jpg
 ```
 
 ## Quick customization
+
 - Site name and description in [src/consts.ts](src/consts.ts).
 - Navigation and hero actions in [src/pages/index.astro](src/pages/index.astro).
 - Colors, type, and utilities in `src/styles/global.css`.
 - Key components: header with search and toggles ([src/components/Header.astro](src/components/Header.astro)), base layout ([src/layouts/BaseLayout.astro](src/layouts/BaseLayout.astro)).
 
 ## Available scripts
+
 - `npm run dev`: server on `localhost:4321` (Astro default).
 - `npm run build`: outputs `dist/` ready to deploy.
 - `npm run preview`: serves the built site locally.
 
 ## Deploy
+
 Output is static HTML. Upload `dist/` to your platform of choice (Netlify, Vercel, Cloudflare Pages, S3+CDN). Set `BASE_URL` if you publish under a subpath.

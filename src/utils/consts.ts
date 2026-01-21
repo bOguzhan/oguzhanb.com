@@ -5,9 +5,10 @@ import { getEntry } from 'astro:content';
 
 export async function getSite() {
 	// Try to read the `site` entry and fallback to constants
-	const entry = await getEntry('site', 'site');
+	const author = await getEntry('site', 'author');
+	const social = await getEntry('site', 'social');
 	return {
-		title: entry?.data.title,
-		description: entry?.data.description,
+		author: author?.data,
+		social: social?.data,
 	};
 }

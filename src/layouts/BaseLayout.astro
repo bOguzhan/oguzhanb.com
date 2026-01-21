@@ -12,7 +12,7 @@ interface Props {
 }
 
 const site = await getSite();
-const { title = site.title, description = site.description, image } = Astro.props;
+const { title = site.author.name, description = site.description, image } = Astro.props;
 ---
 
 <!doctype html>
@@ -22,7 +22,7 @@ const { title = site.title, description = site.description, image } = Astro.prop
     </head>
     <body>
         <Header />
-        <main class="content-shell flex-1 flex flex-col py-12 md:py-16 lg:py-20 space-y-16">
+        <main class="content-shell">
             <slot />
         </main>
         <Footer />

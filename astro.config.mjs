@@ -12,17 +12,24 @@ import icon from "astro-icon";
 // https://astro.build/config
 export default defineConfig({
   site: "https://roicort.github.io",
-  base: "/",
+  base: "/dasein",
   integrations: [mdx(), sitemap(), pagefind(), icon()],
 
   vite: {
     plugins: [tailwindcss()],
   },
   experimental: {
-    fonts: [{
+    fonts: [
+      {
         provider: fontProviders.fontsource(),
         name: "Space Grotesk",
-        cssVariable: "--font-main",
-    }]
-    }
+        cssVariable: "--font-sans",
+      },
+      {
+        provider: fontProviders.fontsource(),
+        name: "IBM Plex Mono",
+        cssVariable: "--font-mono",
+      },
+    ],
+  },
 });

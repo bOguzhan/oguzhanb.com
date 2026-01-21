@@ -35,7 +35,7 @@ const imageURL = new URL((image as ImageMetadata).src, Astro.site ?? Astro.url);
 		},
 		optional: {
 			description,
-			siteName: site.title,
+			siteName: site.author.name || 'Dasein',
 		},
 	}}
 	twitter={{

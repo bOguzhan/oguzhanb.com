@@ -1,6 +1,5 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
-import Values from '../components/Values.astro';
 ---
 
 <PageLayout
@@ -15,19 +14,4 @@ import Values from '../components/Values.astro';
 			<p class="m-0 text-muted">When we embed with clients, we bring our own delivery discipline—strong briefs, scoped milestones, and demos that keep stakeholders aligned. The goal: fewer surprises, faster learning.</p>
 		</div>
 	</section>
-
-	<div class="mt-12 md:mt-16">
-		<Values
-			useShell={false}
-			eyebrow="Values"
-			title="How we show up"
-			copy="Principles we keep front-and-center so every project ships with the same intent and craft."
-			values={[
-				{ title: 'Clarity over noise', description: 'We write, design, and code to be understood quickly by teams and customers.' },
-				{ title: 'Bias for shipping', description: 'We prefer small, validated releases over long bets that never reach users.' },
-				{ title: 'Craft with pragmatism', description: 'Quality matters most when it serves the outcome—polish meets purpose.' },
-				{ title: 'Partnership mindset', description: 'We behave like embedded teammates, not vendors: transparent, responsive, reliable.' },
-			]}
-		/>
-	</div>
 </PageLayout>
